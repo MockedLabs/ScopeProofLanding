@@ -95,35 +95,49 @@
 <nav id="nav" class="fixed top-0 w-full z-50 transition-all duration-300">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-2.5">
-            <svg class="w-7 h-7" viewBox="0 0 48 48" fill="none">
-                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
-                <path d="M17 43.2A20 20 0 014.8 31" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+        <a href="/">
+            <svg viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg" height="32" style="display:block;">
                 <line x1="24" y1="1" x2="24" y2="8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
                 <line x1="24" y1="40" x2="24" y2="47" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
                 <line x1="1" y1="24" x2="8" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
                 <line x1="40" y1="24" x2="47" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <path d="M17 43.2A20 20 0 014.8 31" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
                 <rect x="13" y="27" width="5.5" height="9" fill="#f59e0b" opacity=".35"/>
                 <rect x="21.25" y="20" width="5.5" height="16" fill="#f59e0b" opacity=".6"/>
                 <rect x="29.5" y="13" width="5.5" height="23" fill="#f59e0b"/>
+                <text font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif" font-size="22" letter-spacing="-0.8" y="33" fill="#f5f4ef">
+                    <tspan font-weight="300" x="58">Scope</tspan><tspan font-weight="700">Proof</tspan>
+                </text>
             </svg>
-            <span class="font-semibold font-mono text-white text-sm tracking-tight">ScopeProof</span>
         </a>
 
         <!-- Nav links (hidden on mobile) -->
         <div class="hidden md:flex items-center gap-8">
             <a href="pentesters.html" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Pentesters</a>
             <a href="clients.html" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Clients</a>
-            <a href="#features" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Features</a>
-            <a href="#how-it-works" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">How It Works</a>
             <a href="download.html" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Download</a>
-            <a href="https://app.scopeproof.io/login" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Log In</a>
+            <a href="/blog/" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Blog</a>
         </div>
 
-        <!-- CTA -->
-        <a href="https://app.scopeproof.io/signup" class="text-sm px-4 py-2 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold rounded hover:bg-[#f59e0b] transition-all">
-            Sign Up Free
-        </a>
+        <!-- CTA + Hamburger -->
+        <div class="flex items-center gap-3">
+            <a href="#waitlist" class="text-sm px-4 py-2 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold rounded hover:bg-[#f59e0b] transition-all">
+                Join the Waitlist
+            </a>
+            <button id="menu-toggle" class="md:hidden p-2 text-[#a1a1aa] hover:text-white" aria-label="Toggle menu">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-[#27272a] bg-[#0c0c0e]/95 backdrop-blur-md">
+        <div class="px-6 py-4 flex flex-col gap-3">
+            <a href="pentesters.html" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Pentesters</a>
+            <a href="clients.html" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Clients</a>
+            <a href="download.html" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Download</a>
+            <a href="/blog/" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Blog</a>
+        </div>
     </div>
 </nav>
 
@@ -143,7 +157,7 @@
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
             </span>
-            ScopeProof Pro — Now Live
+            Free Burp Suite Extension — Available Now
         </div>
 
         <!-- Scope icon -->
@@ -180,10 +194,17 @@
 
         <!-- Subheadline -->
         <p class="text-lg md:text-xl text-[#a1a1aa] max-w-2xl mx-auto mb-12 leading-relaxed">
-            The trust layer between pentesters and the businesses they protect.
-            ScopeProof Pro turns coverage data and findings into evidence
-            both sides can see, verify, and trust.
+            Stop delivering PDFs nobody reads. ScopeProof gives your clients verifiable proof of every endpoint tested &mdash; and gives you something no screenshot ever could: credibility.
         </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="/download.html" class="px-8 py-3.5 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold text-sm rounded hover:bg-[#f59e0b] transition-all">
+                Download Free Extension
+            </a>
+            <a href="#waitlist" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">
+                Join the Pro Waitlist &rarr;
+            </a>
+        </div>
 
     </div>
 </section>
@@ -194,25 +215,14 @@
      ================================================================ -->
 <section class="py-10 bg-[#111113] border-b border-[#27272a]">
     <div class="max-w-6xl mx-auto px-6">
-        <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm font-mono text-[#a1a1aa]">
-            <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Built by pentesters
-            </span>
-            <span class="hidden sm:block w-1 h-1 rounded-full bg-[#3f3f46]"></span>
+        <div class="flex flex-col items-center gap-3 text-sm font-mono text-[#a1a1aa]">
             <span class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-                Used in real engagements
+                Free extension &mdash; available now on the BApp Store. No account needed.
             </span>
-            <span class="hidden sm:block w-1 h-1 rounded-full bg-[#3f3f46]"></span>
             <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                Trusted by security teams
-            </span>
-            <span class="hidden sm:block w-1 h-1 rounded-full bg-[#3f3f46]"></span>
-            <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
-                Built for teams &amp; consultancies
+                <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                ScopeProof Pro &mdash; coming soon. Join the waitlist for early access.
             </span>
         </div>
     </div>
@@ -231,8 +241,7 @@
                 From testing to client delivery
             </h2>
             <p class="text-lg text-[#a1a1aa] max-w-2xl mx-auto leading-relaxed">
-                ScopeProof Pro closes the gap between what your team tests,
-                what they find, and what your clients see &mdash; from Burp Suite to branded deliverables.
+                Your clients don't remember the report. They remember whether they felt confident in your work. ScopeProof makes that confidence visible.
             </p>
         </div>
 
@@ -248,7 +257,7 @@
                         <line x1="12" y1="3" x2="12" y2="15"/>
                     </svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">One-Click Upload</h3>
+                <h3 class="font-mono font-semibold text-white mb-2">Your Burp data is in the cloud in seconds</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">Push coverage data directly from Burp Suite to the cloud. Auto-detects ZAP, Nuclei, and Caido formats too.</p>
             </div>
 
@@ -261,7 +270,7 @@
                         <rect x="17" y="3" width="4" height="18" rx="1"/>
                     </svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Team Dashboards</h3>
+                <h3 class="font-mono font-semibold text-white mb-2">Know exactly what your team has &mdash; and hasn't &mdash; tested</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">Testers track their progress in real-time. Leaders see testing depth, gaps, and team performance across engagements.</p>
             </div>
 
@@ -274,7 +283,7 @@
                         <line x1="12" y1="16" x2="12.01" y2="16"/>
                     </svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Findings &amp; Proof</h3>
+                <h3 class="font-mono font-semibold text-white mb-2">Every vuln backed by the traffic that proves it</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">Document vulnerabilities with severity ratings, markdown descriptions, and drag-drop screenshots &mdash; linked to the actual HTTP traffic that proves them.</p>
             </div>
 
@@ -287,7 +296,7 @@
                         <path d="M8 16h8"/>
                     </svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">OWASP Checklist</h3>
+                <h3 class="font-mono font-semibold text-white mb-2">Show clients the methodology, not just the results</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">Built-in OWASP Testing Guide v4.2 checklist auto-seeded with every report. Track status, evidence, and notes per test case.</p>
             </div>
 
@@ -301,7 +310,7 @@
                         <line x1="16" y1="17" x2="8" y2="17"/>
                     </svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Pentest Reports</h3>
+                <h3 class="font-mono font-semibold text-white mb-2">Reports that make your firm look like the premium option</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">Generate branded PDF reports with coverage data, findings, proof blocks, and executive summaries. Share via secure links or client portals.</p>
             </div>
 
@@ -315,7 +324,7 @@
                         <path d="M16 3.13a4 4 0 010 7.75"/>
                     </svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Client Portals</h3>
+                <h3 class="font-mono font-semibold text-white mb-2">Clients stop asking "did you test X?" &mdash; they just log in</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">Give clients direct access to reports, findings, and coverage data through branded workspaces. Builds trust and differentiates your firm.</p>
             </div>
 
@@ -589,7 +598,7 @@
 <!-- ================================================================
      FINAL CTA
      ================================================================ -->
-<section id="get-started" class="py-24 bg-[#0c0c0e] relative overflow-hidden">
+<section id="waitlist" class="py-24 bg-[#0c0c0e] relative overflow-hidden">
     <!-- Background -->
     <div class="absolute inset-0 bg-grid opacity-40"></div>
     <div class="absolute inset-0 bg-mesh"></div>
@@ -611,23 +620,21 @@
         </div>
 
         <h2 class="text-3xl md:text-4xl font-mono font-bold tracking-tight text-white mb-4">
-            Ready to prove your testing?
+            Your next client is comparing you to five other firms. Give them a reason to choose you.
         </h2>
         <p class="text-lg text-[#a1a1aa] mb-10 leading-relaxed">
             The free extension is available now. ScopeProof Pro adds findings management,
             proof-linked reports, team dashboards, client portals, and branded delivery.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://app.scopeproof.io/signup" class="px-8 py-3.5 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold text-sm rounded hover:bg-[#f59e0b] transition-all">
-                Sign Up Free
-            </a>
-            <a href="https://app.scopeproof.io/login" class="px-8 py-3.5 border border-[#3f3f46] text-[#a1a1aa] font-mono font-medium text-sm rounded hover:border-[#52525b] hover:text-white transition-all">
-                Log In
-            </a>
-        </div>
+        <form action="https://formspree.io/f/xaqlgzag" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+            <input type="email" name="email" required placeholder="you@company.com" class="flex-1 px-4 py-3 rounded bg-white/[0.06] border border-[#3f3f46] text-white placeholder-[#71717a] text-sm font-mono focus:border-[#d97706] focus:ring-2 focus:ring-[#d97706]/20 outline-none transition-all">
+            <button type="submit" class="px-6 py-3 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold text-sm rounded hover:bg-[#f59e0b] transition-all whitespace-nowrap cursor-pointer">
+                Get Early Access
+            </button>
+        </form>
 
-        <p class="mt-5 text-sm text-[#71717a]">Free to start. No credit card required.</p>
+        <p class="mt-5 text-sm text-[#71717a]">Free to try. No credit card required.</p>
     </div>
 </section>
 
@@ -637,18 +644,22 @@
      ================================================================ -->
 <footer class="py-8 bg-[#09090b] border-t border-[#27272a]">
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-2.5">
-            <svg class="w-5 h-5" viewBox="0 0 48 48" fill="none">
-                <line x1="24" y1="2" x2="24" y2="9" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="24" y1="39" x2="24" y2="46" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="2" y1="24" x2="9" y2="24" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="39" y1="24" x2="46" y2="24" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
-                <rect x="13" y="27" width="5.5" height="9" fill="#f59e0b" opacity=".4"/>
-                <rect x="21.25" y="20" width="5.5" height="16" fill="#f59e0b" opacity=".65"/>
+        <a href="/" style="display:inline-block;">
+            <svg viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg" height="28" style="display:block;">
+                <line x1="24" y1="1" x2="24" y2="8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="24" y1="40" x2="24" y2="47" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="1" y1="24" x2="8" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="40" y1="24" x2="47" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <path d="M17 43.2A20 20 0 014.8 31" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <rect x="13" y="27" width="5.5" height="9" fill="#f59e0b" opacity=".35"/>
+                <rect x="21.25" y="20" width="5.5" height="16" fill="#f59e0b" opacity=".6"/>
                 <rect x="29.5" y="13" width="5.5" height="23" fill="#f59e0b"/>
+                <text font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif" font-size="22" letter-spacing="-0.8" y="33" fill="#f5f4ef">
+                    <tspan font-weight="300" x="58">Scope</tspan><tspan font-weight="700">Proof</tspan>
+                </text>
             </svg>
-            <span class="text-sm text-[#a1a1aa] font-mono font-medium">ScopeProof</span>
-        </div>
+        </a>
         <p class="text-sm text-[#a1a1aa]">&copy; 2026 ScopeProof. All rights reserved.</p>
     </div>
 </footer>
@@ -670,7 +681,9 @@
     window.addEventListener('scroll', updateNav, { passive: true });
     updateNav();
 
-    // ── CTAs link directly to the app ──
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
 </script>
 
 </body>

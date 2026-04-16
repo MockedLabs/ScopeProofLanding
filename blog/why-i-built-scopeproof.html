@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I Built ScopeProof: The Pentest Industry Has a Trust Problem — ScopeProof</title>
+    <meta name="description" content="Penetration test reports tell you what was found — but almost nothing about what was actually tested. Here's why I built ScopeProof.">
+    <meta property="og:title" content="Why I Built ScopeProof: The Pentest Industry Has a Trust Problem">
+    <meta property="og:description" content="Penetration test reports tell you what was found — but almost nothing about what was actually tested. Here's why I built ScopeProof.">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="author" content="David Mockler">
+
+    <!-- Favicon (inline SVG scope) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='24' y1='1' x2='24' y2='9' stroke='%23f59e0b' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='24' y1='39' x2='24' y2='47' stroke='%23f59e0b' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='1' y1='24' x2='9' y2='24' stroke='%23f59e0b' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='39' y1='24' x2='47' y2='24' stroke='%23f59e0b' stroke-width='3' stroke-linecap='round'/%3E%3Crect x='13' y='27' width='6' height='9' fill='%23f59e0b' opacity='.4'/%3E%3Crect x='21' y='20' width='6' height='16' fill='%23f59e0b' opacity='.65'/%3E%3Crect x='29' y='13' width='6' height='23' fill='%23f59e0b'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    brand: {
+                        50:'#fffbeb', 100:'#fef3c7', 200:'#fde68a', 300:'#fcd34d',
+                        400:'#fbbf24', 500:'#f59e0b', 600:'#d97706', 700:'#b45309',
+                        800:'#92400e', 900:'#78350f', 950:'#451a03',
+                    },
+                },
+                fontFamily: {
+                    sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    mono: ['JetBrains Mono', 'monospace'],
+                },
+            },
+        },
+    };
+    </script>
+
+    <style>
+        .bg-grid {
+            background-image: radial-gradient(circle, rgba(245,158,11,0.04) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .bg-mesh {
+            background:
+                radial-gradient(ellipse 80% 50% at 25% 50%, rgba(245,158,11,0.08), transparent),
+                radial-gradient(ellipse 50% 80% at 80% 20%, rgba(217,119,6,0.05), transparent);
+        }
+        .nav-blur {
+            background: rgba(12,12,14,0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .prose-body p {
+            margin-bottom: 1.5em;
+            line-height: 1.8;
+        }
+        .prose-body h2 {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: white;
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+        }
+        .prose-body blockquote {
+            border-left: 3px solid #d97706;
+            padding-left: 1.25em;
+            margin: 2em 0;
+            font-style: italic;
+            color: #e4e4e7;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0c0c0e] text-[#a1a1aa] font-sans antialiased">
+
+<!-- ================================================================
+     NAVIGATION
+     ================================================================ -->
+<nav id="nav" class="fixed top-0 w-full z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="/">
+            <svg viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg" height="32" style="display:block;">
+                <line x1="24" y1="1" x2="24" y2="8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="24" y1="40" x2="24" y2="47" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="1" y1="24" x2="8" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="40" y1="24" x2="47" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <path d="M17 43.2A20 20 0 014.8 31" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <rect x="13" y="27" width="5.5" height="9" fill="#f59e0b" opacity=".35"/>
+                <rect x="21.25" y="20" width="5.5" height="16" fill="#f59e0b" opacity=".6"/>
+                <rect x="29.5" y="13" width="5.5" height="23" fill="#f59e0b"/>
+                <text font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif" font-size="22" letter-spacing="-0.8" y="33" fill="#f5f4ef">
+                    <tspan font-weight="300" x="58">Scope</tspan><tspan font-weight="700">Proof</tspan>
+                </text>
+            </svg>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="/" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Home</a>
+            <a href="/pentesters.html" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Pentesters</a>
+            <a href="/clients.html" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Clients</a>
+            <a href="/download.html" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Download</a>
+            <a href="/blog/" class="text-sm font-mono text-white font-medium">Blog</a>
+        </div>
+        <div class="flex items-center gap-3">
+            <a href="#waitlist" class="text-sm px-4 py-2 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold rounded hover:bg-[#f59e0b] transition-all">
+                Join the Waitlist
+            </a>
+            <button id="menu-toggle" class="md:hidden p-2 text-[#a1a1aa] hover:text-white" aria-label="Toggle menu">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-[#27272a] bg-[#0c0c0e]/95 backdrop-blur-md">
+        <div class="px-6 py-4 flex flex-col gap-3">
+            <a href="/" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Home</a>
+            <a href="/pentesters.html" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Pentesters</a>
+            <a href="/clients.html" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Clients</a>
+            <a href="/download.html" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Download</a>
+            <a href="/blog/" class="text-sm font-mono text-white font-medium">Blog</a>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ================================================================
+     ARTICLE HEADER
+     ================================================================ -->
+<section class="relative pt-32 pb-12 bg-grid bg-mesh overflow-hidden">
+    <div class="max-w-3xl mx-auto px-6">
+        <!-- Back to blog -->
+        <a href="/blog/" class="inline-flex items-center gap-1.5 text-xs font-mono text-[#a1a1aa]/60 hover:text-brand-400 transition-colors mb-8">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+            Back to Blog
+        </a>
+
+        <!-- Tag -->
+        <div class="mb-4">
+            <span class="text-[10px] font-mono font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-600/10 text-brand-400 border border-brand-600/20">Founder's Note</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-mono text-white tracking-tight leading-tight mb-6">Why I Built ScopeProof: The Pentest Industry Has a Trust Problem</h1>
+
+        <!-- Author & date -->
+        <div class="flex items-center gap-4 text-sm font-mono text-[#a1a1aa]/60">
+            <span>By <span class="text-[#a1a1aa]">David Mockler</span></span>
+            <span>&middot;</span>
+            <span>April 15, 2026</span>
+            <span>&middot;</span>
+            <span>5 min read</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================================================
+     ARTICLE BODY
+     ================================================================ -->
+<article class="py-12">
+    <div class="max-w-3xl mx-auto px-6 prose-body text-base text-[#d4d4d8] leading-relaxed">
+
+        <!-- TL;DR -->
+        <div class="border border-[#27272a] rounded-lg p-5 mb-10 bg-[#09090b]/50">
+            <p class="text-xs font-mono font-semibold uppercase tracking-wider text-brand-400 mb-2">TL;DR</p>
+            <p class="text-sm text-[#a1a1aa] leading-relaxed !mb-0">Penetration test reports tell you what was found — but almost nothing about what was actually tested. After years in the industry and one too many encounters with pentesters who couldn't prove their work, I built ScopeProof: a coverage data platform that captures real testing activity at the request level, so clients can verify what they paid for and pentesters can prove they delivered it.</p>
+        </div>
+
+        <p>I've spent years in cybersecurity — doing bug bounties, working as a penetration tester, and later as an Application Security Engineer. Over that time, I kept running into the same uncomfortable truth: pentest reports are built on trust, not proof.</p>
+
+        <p>You pay for an engagement, you get a report back. It lists findings, assigns severity ratings, and somewhere in the methodology section it says something like "testing was conducted in alignment with OWASP Top 10" or "coverage followed the PTES framework." Sounds rigorous. But if you dig in and ask, "can you actually show me what you tested?" — the best answer you're likely to get is a dump of VPN logs or a stack of raw network captures. Nobody has time to make sense of that, and most clients don't have the technical background to even try.</p>
+
+        <blockquote>Most clients don't know what they don't know — and that's exactly where the trust gap lives.</blockquote>
+
+        <h2>The encounter that made it real</h2>
+
+        <p>I've seen mediocre pentest work before, but one engagement pushed me over the edge. A pentester kept flagging normal application functionality as CSRF vulnerabilities. When I pushed back and asked for a proof-of-concept, I got a screenshot of a request being replayed in Burp Suite Repeater. That's it. No actual exploitation, no demonstration of impact — just a replay.</p>
+
+        <p>Something felt off, so I kept watching the application over the following days. Zero new objects in the UI. Nothing changed. After the engagement wrapped, I raised the concern with the firm. They pulled their VPN logs and, after going through it all, the conclusion was clear: the level of testing did not meet the standard that was promised or paid for.</p>
+
+        <p>Here's what scared me most — if I hadn't been a former pentester myself, I never would have caught it. A non-technical executive would have read that report, paid the invoice, and walked away thinking their application had been properly assessed. That's thousands of dollars for essentially nothing.</p>
+
+        <h2>So I built the solution I wish existed</h2>
+
+        <p>ScopeProof is a coverage data platform for penetration testing engagements. It captures what was actually tested — at the request level — in real time, and makes that data accessible and verifiable for both the pentester and the client.</p>
+
+        <p>Think of it as the trust layer between the two parties. Pentesters get a tool that automatically proves their thoroughness. Clients get a workspace where they can see exactly what was covered, mapped against the frameworks they were promised, with the receipts to back it up.</p>
+
+        <p>No more "we tested against OWASP" buried in an executive summary. ScopeProof shows you what percentage of your application was tested, how deeply, and with what methods — and it ties every finding back to the actual requests that uncovered it.</p>
+
+        <p>Pentesting shouldn't be a trust exercise. It should be a data-driven one. That's why I built ScopeProof.</p>
+
+    </div>
+</article>
+
+
+<!-- ================================================================
+     CTA
+     ================================================================ -->
+<section id="waitlist" class="py-16 border-t border-[#27272a]">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-xl font-bold font-mono text-white mb-3">Ready to prove your work?</h2>
+        <p class="text-sm text-[#a1a1aa] mb-6">Start capturing coverage data for free. No credit card required.</p>
+        <form action="https://formspree.io/f/xaqlgzag" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+            <input type="email" name="email" required placeholder="you@company.com" class="flex-1 px-4 py-3 rounded bg-white/[0.06] border border-[#3f3f46] text-white placeholder-[#71717a] text-sm font-mono focus:border-[#d97706] focus:ring-2 focus:ring-[#d97706]/20 outline-none transition-all">
+            <button type="submit" class="px-6 py-3 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold text-sm rounded hover:bg-[#f59e0b] transition-all whitespace-nowrap cursor-pointer">
+                Get Early Access
+            </button>
+        </form>
+    </div>
+</section>
+
+
+<!-- ================================================================
+     FOOTER
+     ================================================================ -->
+<footer class="py-8 bg-[#09090b] border-t border-[#27272a]">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <a href="/" style="display:inline-block;">
+            <svg viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg" height="28" style="display:block;">
+                <line x1="24" y1="1" x2="24" y2="8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="24" y1="40" x2="24" y2="47" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="1" y1="24" x2="8" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="40" y1="24" x2="47" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <path d="M17 43.2A20 20 0 014.8 31" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <rect x="13" y="27" width="5.5" height="9" fill="#f59e0b" opacity=".35"/>
+                <rect x="21.25" y="20" width="5.5" height="16" fill="#f59e0b" opacity=".6"/>
+                <rect x="29.5" y="13" width="5.5" height="23" fill="#f59e0b"/>
+                <text font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif" font-size="22" letter-spacing="-0.8" y="33" fill="#f5f4ef">
+                    <tspan font-weight="300" x="58">Scope</tspan><tspan font-weight="700">Proof</tspan>
+                </text>
+            </svg>
+        </a>
+        <p class="text-sm text-[#a1a1aa]/50">&copy; 2026 ScopeProof. All rights reserved.</p>
+    </div>
+</footer>
+
+
+<!-- ================================================================
+     SCRIPTS
+     ================================================================ -->
+<script>
+    const nav = document.getElementById('nav');
+    function updateNav() {
+        if (window.scrollY > 32) {
+            nav.classList.add('nav-blur');
+        } else {
+            nav.classList.remove('nav-blur');
+        }
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
+
+</body>
+</html>
