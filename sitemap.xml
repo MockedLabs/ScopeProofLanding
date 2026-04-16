@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://scopeproof.io/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://scopeproof.io/pentesters/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://scopeproof.io/clients/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://scopeproof.io/download/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://scopeproof.io/blog/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scopeproof.io/blog/why-i-built-scopeproof/</loc>
+    <priority>0.6</priority>
+  </url>
+</urlset>
