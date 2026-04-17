@@ -21,6 +21,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://scopeproof.io/blog/good-pentesters-lose-clients-too/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://scopeproof.io/blog/why-i-built-scopeproof/</loc>
     <priority>0.6</priority>
   </url>
