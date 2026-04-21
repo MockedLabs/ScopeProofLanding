@@ -10,12 +10,11 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Favicon (inline SVG scope) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" sizes="180x180" href="/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -24,21 +23,13 @@
             extend: {
                 colors: {
                     brand: {
-                        50:  '#fffbeb',
-                        100: '#fef3c7',
-                        200: '#fde68a',
-                        300: '#fcd34d',
-                        400: '#fbbf24',
-                        500: '#f59e0b',
-                        600: '#d97706',
-                        700: '#b45309',
-                        800: '#92400e',
-                        900: '#78350f',
-                        950: '#451a03',
+                        50:'#f0fdfa', 100:'#ccfbf1', 200:'#99f6e4', 300:'#5eead4',
+                        400:'#2dd4bf', 500:'#14b8a6', 600:'#0d9488', 700:'#0f766e',
+                        800:'#115e59', 900:'#134e4a', 950:'#042f2e',
                     },
                 },
                 fontFamily: {
-                    sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    sans: ['IBM Plex Sans', 'system-ui', '-apple-system', 'sans-serif'],
                     mono: ['JetBrains Mono', 'monospace'],
                 },
             },
@@ -47,72 +38,44 @@
     </script>
 
     <style>
-        /* Dot grid background */
         .bg-grid {
-            background-image: radial-gradient(circle, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
+            background-image: radial-gradient(circle, rgba(20,184,166,0.04) 1px, transparent 1px);
             background-size: 32px 32px;
         }
-        /* Gradient mesh for hero depth */
         .bg-mesh {
-            background:
-                radial-gradient(ellipse 80% 50% at 25% 50%, rgba(245, 158, 11, 0.08), transparent);
+            background: radial-gradient(ellipse 80% 50% at 25% 50%, rgba(20,184,166,0.07), transparent);
         }
-        /* Floating animation for hero icon */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .animate-float {
-            animation: float 5s ease-in-out infinite;
-        }
-        /* Glow effect on hero icon */
-        .icon-glow {
-            filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.35)) drop-shadow(0 0 80px rgba(245, 158, 11, 0.15));
-        }
-        /* Pulsing scope arcs */
-        @keyframes scope-pulse {
-            0%, 100% { opacity: .25; }
-            50% { opacity: .55; }
-        }
-        .scope-arcs {
-            animation: scope-pulse 3s ease-in-out infinite;
-        }
-        /* Smooth nav transition */
         .nav-blur {
-            background: rgba(12, 12, 14, 0.8);
+            background: rgba(12,12,14,0.8);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
     </style>
 </head>
 
 <body class="bg-[#0c0c0e] text-[#a1a1aa] font-sans antialiased">
 
-<!-- ================================================================
-     NAVIGATION
-     ================================================================ -->
+<!-- NAV -->
 <nav id="nav" class="fixed top-0 w-full z-50 transition-all duration-300">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <!-- Logo -->
         <a href="/">
             <svg viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg" height="32" style="display:block;">
-                <line x1="24" y1="1" x2="24" y2="8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <line x1="24" y1="40" x2="24" y2="47" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <line x1="1" y1="24" x2="8" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <line x1="40" y1="24" x2="47" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
-                <path d="M17 43.2A20 20 0 014.8 31" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
-                <rect x="13" y="27" width="5.5" height="9" fill="#f59e0b" opacity=".35"/>
-                <rect x="21.25" y="20" width="5.5" height="16" fill="#f59e0b" opacity=".6"/>
-                <rect x="29.5" y="13" width="5.5" height="23" fill="#f59e0b"/>
-                <text font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif" font-size="22" letter-spacing="-0.8" y="33" fill="#f5f4ef">
+                <line x1="24" y1="1" x2="24" y2="8" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="24" y1="40" x2="24" y2="47" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="1" y1="24" x2="8" y2="24" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="40" y1="24" x2="47" y2="24" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <path d="M17 43.2A20 20 0 014.8 31" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <rect x="13" y="27" width="5.5" height="9" fill="#14b8a6" opacity=".35"/>
+                <rect x="21.25" y="20" width="5.5" height="16" fill="#14b8a6" opacity=".6"/>
+                <rect x="29.5" y="13" width="5.5" height="23" fill="#14b8a6"/>
+                <text font-family="'IBM Plex Sans', -apple-system, 'Helvetica Neue', sans-serif" font-size="22" letter-spacing="-0.8" y="33" fill="#f5f4ef">
                     <tspan font-weight="300" x="58">Scope</tspan><tspan font-weight="700">Proof</tspan>
                 </text>
             </svg>
         </a>
 
-        <!-- Nav links (hidden on mobile) -->
         <div class="hidden md:flex items-center gap-8">
             <a href="/pentesters/" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Pentesters</a>
             <a href="/clients/" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Clients</a>
@@ -120,9 +83,8 @@
             <a href="/blog/" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Blog</a>
         </div>
 
-        <!-- CTA + Hamburger -->
         <div class="flex items-center gap-3">
-            <a href="#waitlist" class="text-sm px-4 py-2 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold rounded hover:bg-[#f59e0b] transition-all">
+            <a href="#waitlist" class="text-sm px-4 py-2 bg-brand-600 text-white font-medium rounded hover:bg-brand-500 transition-all">
                 Join the Waitlist
             </a>
             <button id="menu-toggle" class="md:hidden p-2 text-[#a1a1aa] hover:text-white" aria-label="Toggle menu">
@@ -130,7 +92,6 @@
             </button>
         </div>
     </div>
-    <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-[#27272a] bg-[#0c0c0e]/95 backdrop-blur-md">
         <div class="px-6 py-4 flex flex-col gap-3">
             <a href="/pentesters/" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">Pentesters</a>
@@ -142,44 +103,38 @@
 </nav>
 
 
-<!-- ================================================================
-     HERO
-     ================================================================ -->
+<!-- HERO -->
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0c0c0e]">
-    <!-- Background layers -->
     <div class="absolute inset-0 bg-grid"></div>
     <div class="absolute inset-0 bg-mesh"></div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-28 pb-24">
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 mb-10 rounded border border-amber-400/20 bg-amber-400/10 text-sm font-mono text-amber-300">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 mb-10 rounded border border-brand-500/20 bg-brand-500/10 text-sm font-mono text-brand-400">
             <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-400"></span>
             </span>
             Free Burp Suite Extension — Available Now
         </div>
 
         <!-- Scope icon -->
-        <div class="mb-10 animate-float icon-glow">
+        <div class="mb-10">
             <svg class="mx-auto w-[96px] h-[96px]" viewBox="0 0 48 48" fill="none">
                 <defs>
                     <linearGradient id="hero-bar" x1="13" y1="13" x2="35" y2="36" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#f59e0b"/>
-                        <stop offset="1" stop-color="#b45309"/>
+                        <stop stop-color="#14b8a6"/>
+                        <stop offset="1" stop-color="#0f766e"/>
                     </linearGradient>
                 </defs>
-                <!-- Animated partial arcs -->
-                <g class="scope-arcs">
-                    <path d="M31 4.8A20 20 0 0143.2 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M17 43.2A20 20 0 014.8 31" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+                <g opacity=".3">
+                    <path d="M31 4.8A20 20 0 0143.2 17" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M17 43.2A20 20 0 014.8 31" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round"/>
                 </g>
-                <!-- Crosshair ticks -->
-                <line x1="24" y1="0" x2="24" y2="8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".55"/>
-                <line x1="24" y1="40" x2="24" y2="48" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".55"/>
-                <line x1="0" y1="24" x2="8" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".55"/>
-                <line x1="40" y1="24" x2="48" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".55"/>
-                <!-- Coverage bars (sharp corners) -->
+                <line x1="24" y1="0" x2="24" y2="8" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+                <line x1="24" y1="40" x2="24" y2="48" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+                <line x1="0" y1="24" x2="8" y2="24" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+                <line x1="40" y1="24" x2="48" y2="24" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".55"/>
                 <rect x="13" y="27" width="5.5" height="9" fill="url(#hero-bar)" opacity=".35"/>
                 <rect x="21.25" y="20" width="5.5" height="16" fill="url(#hero-bar)" opacity=".6"/>
                 <rect x="29.5" y="13" width="5.5" height="23" fill="url(#hero-bar)"/>
@@ -187,57 +142,51 @@
         </div>
 
         <!-- Headline -->
-        <h1 class="text-5xl sm:text-6xl md:text-7xl font-mono font-extrabold tracking-tight leading-[1.08] mb-6">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.08] mb-6">
             <span class="text-white">Prove what</span><br>
-            <span class="bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 bg-clip-text text-transparent">was tested.</span>
+            <span class="bg-gradient-to-r from-brand-400 via-brand-300 to-brand-200 bg-clip-text text-transparent">was tested.</span>
         </h1>
 
-        <!-- Subheadline -->
         <p class="text-lg md:text-xl text-[#a1a1aa] max-w-2xl mx-auto mb-12 leading-relaxed">
             Stop delivering PDFs nobody reads. ScopeProof gives your clients verifiable proof of every endpoint tested &mdash; and gives you something no screenshot ever could: credibility.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="/download/" class="px-8 py-3.5 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold text-sm rounded hover:bg-[#f59e0b] transition-all">
+            <a href="/download/" class="px-8 py-3.5 bg-brand-600 text-white font-semibold text-sm rounded hover:bg-brand-500 transition-all">
                 Download Free Extension
             </a>
-            <a href="#waitlist" class="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors">
+            <a href="#waitlist" class="text-sm text-[#a1a1aa] hover:text-white transition-colors">
                 Join the Pro Waitlist &rarr;
             </a>
         </div>
-
     </div>
 </section>
 
 
-<!-- ================================================================
-     TRUST BAR
-     ================================================================ -->
-<section class="py-10 bg-[#111113] border-b border-[#27272a]">
+<!-- TRUST BAR -->
+<section class="py-8 bg-[#111113] border-b border-[#27272a]">
     <div class="max-w-6xl mx-auto px-6">
-        <div class="flex flex-col items-center gap-3 text-sm font-mono text-[#a1a1aa]">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-[#a1a1aa]">
             <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-                Free extension &mdash; available now on the BApp Store. No account needed.
+                <svg class="w-4 h-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Free extension &mdash; available now. No account needed.
             </span>
+            <span class="hidden sm:block w-1 h-1 rounded-full bg-[#3f3f46]"></span>
             <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                ScopeProof Pro &mdash; coming soon. Join the waitlist for early access.
+                <svg class="w-4 h-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                ScopeProof Pro &mdash; coming soon. Join the waitlist.
             </span>
         </div>
     </div>
 </section>
 
 
-<!-- ================================================================
-     FEATURES
-     ================================================================ -->
-<section id="features" class="py-24 bg-[#0c0c0e]">
+<!-- SPOTLIGHT FEATURE -->
+<section class="py-28 bg-[#0c0c0e]">
     <div class="max-w-6xl mx-auto px-6">
-        <!-- Section header -->
-        <div class="text-center mb-16">
-            <p class="text-sm font-mono font-semibold text-amber-500 tracking-wide uppercase mb-3">Platform</p>
-            <h2 class="text-3xl md:text-4xl font-mono font-bold tracking-tight text-white mb-4">
+        <div class="text-center mb-20">
+            <p class="text-sm font-mono font-semibold text-brand-500 tracking-wide uppercase mb-3">Platform</p>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
                 From testing to client delivery
             </h2>
             <p class="text-lg text-[#a1a1aa] max-w-2xl mx-auto leading-relaxed">
@@ -245,127 +194,93 @@
             </p>
         </div>
 
-        <!-- Feature grid -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-
-            <!-- 1. One-Click Upload -->
-            <div class="group p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all duration-300">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-                        <polyline points="17 8 12 3 7 8"/>
-                        <line x1="12" y1="3" x2="12" y2="15"/>
-                    </svg>
+        <!-- Hero feature — full width, left-aligned -->
+        <div class="grid md:grid-cols-5 gap-8 items-center mb-16 pb-16 border-b border-[#1f1f23]">
+            <div class="md:col-span-3">
+                <div class="flex items-center gap-2.5 mb-4">
+                    <div class="w-8 h-8 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                    <span class="text-xs font-mono text-brand-400 uppercase tracking-wider">Core</span>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Your Burp data is in the cloud in seconds</h3>
-                <p class="text-sm text-[#a1a1aa] leading-relaxed">Push coverage data directly from Burp Suite to the cloud. Auto-detects ZAP, Nuclei, and Caido formats too.</p>
+                <h3 class="text-2xl font-semibold text-white mb-3">Your Burp data is in the cloud in seconds</h3>
+                <p class="text-[#a1a1aa] leading-relaxed max-w-xl">Push coverage data directly from Burp Suite to the cloud. Auto-detects ZAP, Nuclei, and Caido formats too. No workflow changes — keep testing the way you always have.</p>
+            </div>
+            <div class="md:col-span-2">
+                <div class="rounded-lg border border-[#27272a] bg-[#18181b] p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-2 h-2 rounded-full bg-brand-500"></div>
+                        <span class="text-xs font-mono text-[#71717a]">coverage-upload.log</span>
+                    </div>
+                    <div class="font-mono text-xs text-[#a1a1aa] space-y-1.5">
+                        <div><span class="text-[#71717a]">14:23:01</span> <span class="text-brand-400">uploading</span> 847 endpoints</div>
+                        <div><span class="text-[#71717a]">14:23:02</span> <span class="text-brand-400">detected</span> burp-suite format</div>
+                        <div><span class="text-[#71717a]">14:23:03</span> <span class="text-emerald-400">complete</span> 847/847 synced</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Supporting features — varied grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-brand-500/30 transition-all duration-300">
+                <div class="w-10 h-10 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>
+                </div>
+                <h3 class="font-semibold text-white mb-2">Team dashboards</h3>
+                <p class="text-sm text-[#a1a1aa] leading-relaxed">Testers track progress in real-time. Leaders see testing depth, gaps, and team performance across engagements.</p>
             </div>
 
-            <!-- 2. Team Dashboards -->
-            <div class="group p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all duration-300">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="12" width="4" height="9" rx="1"/>
-                        <rect x="10" y="7" width="4" height="14" rx="1"/>
-                        <rect x="17" y="3" width="4" height="18" rx="1"/>
-                    </svg>
+            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-brand-500/30 transition-all duration-300">
+                <div class="w-10 h-10 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Know exactly what your team has &mdash; and hasn't &mdash; tested</h3>
-                <p class="text-sm text-[#a1a1aa] leading-relaxed">Testers track their progress in real-time. Leaders see testing depth, gaps, and team performance across engagements.</p>
+                <h3 class="font-semibold text-white mb-2">Findings with proof</h3>
+                <p class="text-sm text-[#a1a1aa] leading-relaxed">Document vulnerabilities with severity ratings, markdown descriptions, and screenshots &mdash; linked to the actual HTTP traffic that proves them.</p>
             </div>
 
-            <!-- 3. Findings & Proof -->
-            <div class="group p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all duration-300">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="12" y1="8" x2="12" y2="12"/>
-                        <line x1="12" y1="16" x2="12.01" y2="16"/>
-                    </svg>
+            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-brand-500/30 transition-all duration-300">
+                <div class="w-10 h-10 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10l2 2 4-4"/><path d="M8 16h8"/></svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Every vuln backed by the traffic that proves it</h3>
-                <p class="text-sm text-[#a1a1aa] leading-relaxed">Document vulnerabilities with severity ratings, markdown descriptions, and drag-drop screenshots &mdash; linked to the actual HTTP traffic that proves them.</p>
-            </div>
-
-            <!-- 4. OWASP Tracking -->
-            <div class="group p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all duration-300">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="3"/>
-                        <path d="M8 10l2 2 4-4"/>
-                        <path d="M8 16h8"/>
-                    </svg>
-                </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Show clients the methodology, not just the results</h3>
+                <h3 class="font-semibold text-white mb-2">OWASP methodology tracking</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">Built-in OWASP Testing Guide v4.2 checklist auto-seeded with every report. Track status, evidence, and notes per test case.</p>
             </div>
 
-            <!-- 5. Pentest Reports -->
-            <div class="group p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all duration-300">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                        <polyline points="14 2 14 8 20 8"/>
-                        <line x1="16" y1="13" x2="8" y2="13"/>
-                        <line x1="16" y1="17" x2="8" y2="17"/>
-                    </svg>
+            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-brand-500/30 transition-all duration-300">
+                <div class="w-10 h-10 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Reports that make your firm look like the premium option</h3>
-                <p class="text-sm text-[#a1a1aa] leading-relaxed">Generate branded PDF reports with coverage data, findings, proof blocks, and executive summaries. Share via secure links or client portals.</p>
+                <h3 class="font-semibold text-white mb-2">Branded PDF reports</h3>
+                <p class="text-sm text-[#a1a1aa] leading-relaxed">Generate reports with coverage data, findings, proof blocks, and executive summaries. Share via secure links or client portals.</p>
             </div>
 
-            <!-- 6. Client Portals -->
-            <div class="group p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all duration-300">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                        <circle cx="9" cy="7" r="4"/>
-                        <path d="M23 21v-2a4 4 0 00-3-3.87"/>
-                        <path d="M16 3.13a4 4 0 010 7.75"/>
-                    </svg>
+            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-brand-500/30 transition-all duration-300">
+                <div class="w-10 h-10 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Clients stop asking "did you test X?" &mdash; they just log in</h3>
-                <p class="text-sm text-[#a1a1aa] leading-relaxed">Give clients direct access to reports, findings, and coverage data through branded workspaces. Builds trust and differentiates your firm.</p>
+                <h3 class="font-semibold text-white mb-2">Client portals</h3>
+                <p class="text-sm text-[#a1a1aa] leading-relaxed">Clients stop asking "did you test X?" &mdash; they log in and see coverage, findings, and reports in branded workspaces.</p>
             </div>
 
-            <!-- 7. Finding Templates -->
-            <div class="group p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all duration-300">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <path d="M3 9h18"/>
-                        <path d="M9 21V9"/>
-                    </svg>
+            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-brand-500/30 transition-all duration-300">
+                <div class="w-10 h-10 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Finding Templates</h3>
-                <p class="text-sm text-[#a1a1aa] leading-relaxed">Build a library of reusable finding templates for common vulnerabilities. One click to add a finding with pre-filled severity, description, and remediation.</p>
+                <h3 class="font-semibold text-white mb-2">Compliance evidence</h3>
+                <p class="text-sm text-[#a1a1aa] leading-relaxed">Generate audit-ready evidence for SOC 2, ISO 27001, and PCI DSS. Coverage data proves exactly what was assessed.</p>
             </div>
-
-            <!-- 8. Compliance Evidence -->
-            <div class="group p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all duration-300">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        <path d="M9 12l2 2 4-4"/>
-                    </svg>
-                </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Compliance Evidence</h3>
-                <p class="text-sm text-[#a1a1aa] leading-relaxed">Generate audit-ready evidence for SOC 2, ISO 27001, and PCI DSS. Coverage data and findings prove exactly what was assessed and how.</p>
-            </div>
-
         </div>
     </div>
 </section>
 
 
-<!-- ================================================================
-     DUAL AUDIENCE
-     ================================================================ -->
-<section id="who-its-for" class="py-24 bg-[#111113]">
+<!-- DUAL AUDIENCE -->
+<section id="who-its-for" class="py-20 bg-[#111113]">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
-            <p class="text-sm font-mono font-semibold text-amber-500 tracking-wide uppercase mb-3">The Trust Layer</p>
-            <h2 class="text-3xl md:text-4xl font-mono font-bold tracking-tight text-white mb-4">
+            <p class="text-sm font-mono font-semibold text-brand-500 tracking-wide uppercase mb-3">The Trust Layer</p>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
                 Built on a simple idea: trust goes both ways
             </h2>
             <p class="text-lg text-[#a1a1aa] max-w-2xl mx-auto leading-relaxed">
@@ -376,11 +291,10 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 relative">
-
-            <!-- Trust bridge connector (desktop only) -->
+            <!-- Trust bridge connector -->
             <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                 <div class="w-16 h-16 rounded-full bg-[#18181b] border-2 border-[#27272a] flex items-center justify-center">
-                    <svg class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="w-6 h-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M8 7h12M20 7l-4-4M20 7l-4 4"/>
                         <path d="M16 17H4M4 17l4-4M4 17l4 4"/>
                     </svg>
@@ -389,36 +303,28 @@
 
             <!-- For Pentesters -->
             <div class="bg-[#18181b] rounded-md border border-[#27272a] p-8 relative overflow-hidden">
-                <div class="absolute top-0 left-0 right-0 h-1 bg-amber-500"></div>
-                <div class="w-12 h-12 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-5">
-                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <div class="absolute top-0 left-0 right-0 h-1 bg-brand-500"></div>
+                <div class="w-12 h-12 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-5">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                 </div>
-                <h3 class="text-xl font-mono font-bold text-white mb-1">For Pentesters</h3>
-                <p class="text-amber-500 text-sm font-mono font-medium mb-5">"I did the work &mdash; here's the proof."</p>
+                <h3 class="text-xl font-bold text-white mb-1">For Pentesters</h3>
+                <p class="text-brand-400 text-sm font-mono mb-5">"I did the work &mdash; here's the proof."</p>
                 <ul class="space-y-3">
                     <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        <svg class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                         <span class="text-sm text-[#a1a1aa]">Real-time coverage tracking as you test &mdash; nothing to configure</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-sm text-[#a1a1aa]">Tag your own payloads — flag XSS, SQLi, SSRF, and more with zero false positives</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        <svg class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                         <span class="text-sm text-[#a1a1aa]">Show clients exactly which endpoints were fuzzed, tested, or just observed</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-sm text-[#a1a1aa]">Compare coverage against OpenAPI specs to prove nothing was missed</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        <svg class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                         <span class="text-sm text-[#a1a1aa]">Document findings with markdown, screenshots, and proof linked to real traffic</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-sm text-[#a1a1aa]">Baseline retests show exactly what changed since the last engagement</span>
+                        <svg class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        <span class="text-sm text-[#a1a1aa]">Compare coverage against OpenAPI specs to prove nothing was missed</span>
                     </li>
                 </ul>
                 <div class="mt-6 pt-5 border-t border-[#27272a]">
@@ -430,10 +336,10 @@
             <div class="bg-[#18181b] rounded-md border border-[#27272a] p-8 relative overflow-hidden">
                 <div class="absolute top-0 left-0 right-0 h-1 bg-emerald-500"></div>
                 <div class="w-12 h-12 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 flex items-center justify-center mb-5">
-                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v4"/><path d="M12 14v4"/><path d="M16 14v4"/></svg>
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v4"/><path d="M12 14v4"/><path d="M16 14v4"/></svg>
                 </div>
-                <h3 class="text-xl font-mono font-bold text-white mb-1">For Businesses</h3>
-                <p class="text-emerald-500 text-sm font-mono font-medium mb-5">"We paid for a pentest &mdash; here's what we got."</p>
+                <h3 class="text-xl font-bold text-white mb-1">For Businesses</h3>
+                <p class="text-emerald-500 text-sm font-mono mb-5">"We paid for a pentest &mdash; here's what we got."</p>
                 <ul class="space-y-3">
                     <li class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
@@ -451,14 +357,6 @@
                         <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                         <span class="text-sm text-[#a1a1aa]">Hold pentest firms accountable to scope &mdash; objectively, not adversarially</span>
                     </li>
-                    <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-sm text-[#a1a1aa]">See every finding with the actual HTTP evidence that proves it &mdash; not just a screenshot</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-sm text-[#a1a1aa]">Compare coverage across retests to track your security posture over time</span>
-                    </li>
                 </ul>
                 <div class="mt-6 pt-5 border-t border-[#27272a]">
                     <p class="text-xs text-[#71717a] italic">Stop wondering if the pentest was thorough. Now you can see for yourself.</p>
@@ -466,7 +364,6 @@
             </div>
         </div>
 
-        <!-- Trust statement -->
         <div class="mt-12 text-center">
             <p class="text-[#71717a] text-sm max-w-xl mx-auto leading-relaxed">
                 The best pentester-client relationships are built on transparency.
@@ -477,74 +374,44 @@
 </section>
 
 
-<!-- ================================================================
-     HOW IT WORKS
-     ================================================================ -->
-<section id="how-it-works" class="py-24 bg-[#0c0c0e]">
-    <div class="max-w-5xl mx-auto px-6">
-        <!-- Section header -->
-        <div class="text-center mb-16">
-            <p class="text-sm font-mono font-semibold text-amber-500 tracking-wide uppercase mb-3">Workflow</p>
-            <h2 class="text-3xl md:text-4xl font-mono font-bold tracking-tight text-white mb-4">
+<!-- HOW IT WORKS — compact timeline -->
+<section id="how-it-works" class="py-16 bg-[#0c0c0e]">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <p class="text-sm font-mono font-semibold text-brand-500 tracking-wide uppercase mb-3">Workflow</p>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
                 Three steps to proven testing
             </h2>
-            <p class="text-lg text-[#a1a1aa] max-w-xl mx-auto">
-                No workflow changes required. Keep testing the way you always have.
-            </p>
         </div>
 
-        <!-- Steps -->
-        <div class="grid md:grid-cols-3 gap-12 md:gap-8 relative">
-            <!-- Connector line -->
-            <div class="hidden md:block absolute top-7 left-[20%] right-[20%] border-t-2 border-dashed border-[#27272a]"></div>
-
-            <!-- Step 1 -->
-            <div class="text-center">
-                <div class="w-14 h-14 rounded-md bg-[#d97706] text-[#0c0c0e] font-mono font-bold text-xl flex items-center justify-center mx-auto mb-6 relative z-10">
-                    1
-                </div>
-                <h3 class="font-mono font-semibold text-white mb-2 text-lg">Install the Extension</h3>
-                <p class="text-sm text-[#a1a1aa] leading-relaxed">
-                    Add ScopeProof to Burp Suite from the BApp Store. Free, open source, no account needed.
-                </p>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="relative pl-8 border-l-2 border-brand-500/30 md:border-l-0 md:pl-0 md:border-t-2 md:pt-8">
+                <div class="absolute -left-3.5 top-0 md:static md:mb-4 w-7 h-7 rounded-full bg-brand-600 text-white text-sm font-bold flex items-center justify-center">1</div>
+                <h3 class="font-semibold text-white mb-2">Install the Extension</h3>
+                <p class="text-sm text-[#a1a1aa] leading-relaxed">Add ScopeProof to Burp Suite from the BApp Store. Free, open source, no account needed.</p>
             </div>
-
-            <!-- Step 2 -->
-            <div class="text-center">
-                <div class="w-14 h-14 rounded-md bg-[#d97706] text-[#0c0c0e] font-mono font-bold text-xl flex items-center justify-center mx-auto mb-6 relative z-10">
-                    2
-                </div>
-                <h3 class="font-mono font-semibold text-white mb-2 text-lg">Run Your Pentest</h3>
-                <p class="text-sm text-[#a1a1aa] leading-relaxed">
-                    Test normally. The extension captures traffic, detects testing patterns, and tracks coverage automatically.
-                </p>
+            <div class="relative pl-8 border-l-2 border-brand-500/30 md:border-l-0 md:pl-0 md:border-t-2 md:pt-8">
+                <div class="absolute -left-3.5 top-0 md:static md:mb-4 w-7 h-7 rounded-full bg-brand-600 text-white text-sm font-bold flex items-center justify-center">2</div>
+                <h3 class="font-semibold text-white mb-2">Run Your Pentest</h3>
+                <p class="text-sm text-[#a1a1aa] leading-relaxed">Test normally. The extension captures traffic, detects testing patterns, and tracks coverage automatically.</p>
             </div>
-
-            <!-- Step 3 -->
-            <div class="text-center">
-                <div class="w-14 h-14 rounded-md bg-[#d97706] text-[#0c0c0e] font-mono font-bold text-xl flex items-center justify-center mx-auto mb-6 relative z-10">
-                    3
-                </div>
-                <h3 class="font-mono font-semibold text-white mb-2 text-lg">Report &amp; Deliver</h3>
-                <p class="text-sm text-[#a1a1aa] leading-relaxed">
-                    Upload to Pro for findings documentation, proof-linked reports, team dashboards, and client delivery &mdash; all in one click.
-                </p>
+            <div class="relative pl-8 border-l-2 border-brand-500/30 md:border-l-0 md:pl-0 md:border-t-2 md:pt-8">
+                <div class="absolute -left-3.5 top-0 md:static md:mb-4 w-7 h-7 rounded-full bg-brand-600 text-white text-sm font-bold flex items-center justify-center">3</div>
+                <h3 class="font-semibold text-white mb-2">Report &amp; Deliver</h3>
+                <p class="text-sm text-[#a1a1aa] leading-relaxed">Upload to Pro for findings documentation, proof-linked reports, team dashboards, and client delivery.</p>
             </div>
         </div>
     </div>
 </section>
 
 
-<!-- ================================================================
-     EXTENSION PREVIEW
-     ================================================================ -->
-<section class="py-24 bg-[#111113]">
+<!-- EXTENSION PREVIEW -->
+<section class="py-20 bg-[#111113]">
     <div class="max-w-6xl mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-12 items-center">
-            <!-- Text -->
             <div>
-                <p class="text-sm font-mono font-semibold text-amber-500 tracking-wide uppercase mb-3">Free Extension</p>
-                <h2 class="text-3xl font-mono font-bold tracking-tight text-white mb-4">
+                <p class="text-sm font-mono font-semibold text-brand-500 tracking-wide uppercase mb-3">Free Extension</p>
+                <h2 class="text-3xl font-bold tracking-tight text-white mb-4">
                     Your testers get a free Burp extension
                 </h2>
                 <p class="text-[#a1a1aa] leading-relaxed mb-8">
@@ -555,7 +422,7 @@
 
                 <div class="space-y-4">
                     <div class="flex items-start gap-3">
-                        <div class="w-5 h-5 rounded-full bg-amber-500/10 text-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div class="w-5 h-5 rounded-full bg-brand-500/10 text-brand-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                         </div>
                         <div>
@@ -564,7 +431,7 @@
                         </div>
                     </div>
                     <div class="flex items-start gap-3">
-                        <div class="w-5 h-5 rounded-full bg-amber-500/10 text-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div class="w-5 h-5 rounded-full bg-brand-500/10 text-brand-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                         </div>
                         <div>
@@ -573,7 +440,7 @@
                         </div>
                     </div>
                     <div class="flex items-start gap-3">
-                        <div class="w-5 h-5 rounded-full bg-amber-500/10 text-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div class="w-5 h-5 rounded-full bg-brand-500/10 text-brand-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                         </div>
                         <div>
@@ -584,42 +451,36 @@
                 </div>
             </div>
 
-            <!-- Extension screenshot -->
             <div class="relative">
                 <img src="/screenshot.png" alt="ScopeProof Burp Suite Extension" class="rounded-md border border-[#27272a] w-full">
-                <!-- Decorative glow -->
-                <div class="absolute -inset-4 bg-amber-500/5 rounded-xl -z-10 blur-2xl"></div>
+                <div class="absolute -inset-4 bg-brand-500/5 rounded-xl -z-10 blur-2xl"></div>
             </div>
         </div>
     </div>
 </section>
 
 
-<!-- ================================================================
-     FINAL CTA
-     ================================================================ -->
+<!-- CTA -->
 <section id="waitlist" class="py-24 bg-[#0c0c0e] relative overflow-hidden">
-    <!-- Background -->
     <div class="absolute inset-0 bg-grid opacity-40"></div>
     <div class="absolute inset-0 bg-mesh"></div>
 
     <div class="relative z-10 max-w-2xl mx-auto px-6 text-center">
-        <!-- Icon -->
         <div class="mb-8">
             <svg class="mx-auto w-12 h-12" viewBox="0 0 48 48" fill="none">
-                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".15"/>
-                <path d="M17 43.2A20 20 0 014.8 31" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".15"/>
-                <line x1="24" y1="1" x2="24" y2="8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".3"/>
-                <line x1="24" y1="40" x2="24" y2="47" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".3"/>
-                <line x1="1" y1="24" x2="8" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".3"/>
-                <line x1="40" y1="24" x2="47" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".3"/>
-                <rect x="13" y="27" width="5.5" height="9" fill="#f59e0b" opacity=".25"/>
-                <rect x="21.25" y="20" width="5.5" height="16" fill="#f59e0b" opacity=".45"/>
-                <rect x="29.5" y="13" width="5.5" height="23" fill="#f59e0b" opacity=".7"/>
+                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" opacity=".15"/>
+                <path d="M17 43.2A20 20 0 014.8 31" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" opacity=".15"/>
+                <line x1="24" y1="1" x2="24" y2="8" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".3"/>
+                <line x1="24" y1="40" x2="24" y2="47" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".3"/>
+                <line x1="1" y1="24" x2="8" y2="24" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".3"/>
+                <line x1="40" y1="24" x2="47" y2="24" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".3"/>
+                <rect x="13" y="27" width="5.5" height="9" fill="#14b8a6" opacity=".25"/>
+                <rect x="21.25" y="20" width="5.5" height="16" fill="#14b8a6" opacity=".45"/>
+                <rect x="29.5" y="13" width="5.5" height="23" fill="#14b8a6" opacity=".7"/>
             </svg>
         </div>
 
-        <h2 class="text-3xl md:text-4xl font-mono font-bold tracking-tight text-white mb-4">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
             Your next client is comparing you to five other firms. Give them a reason to choose you.
         </h2>
         <p class="text-lg text-[#a1a1aa] mb-10 leading-relaxed">
@@ -628,8 +489,8 @@
         </p>
 
         <form action="https://formspree.io/f/xaqlgzag" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-            <input type="email" name="email" required placeholder="you@company.com" class="flex-1 px-4 py-3 rounded bg-white/[0.06] border border-[#3f3f46] text-white placeholder-[#71717a] text-sm font-mono focus:border-[#d97706] focus:ring-2 focus:ring-[#d97706]/20 outline-none transition-all">
-            <button type="submit" class="px-6 py-3 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold text-sm rounded hover:bg-[#f59e0b] transition-all whitespace-nowrap cursor-pointer">
+            <input type="email" name="email" required placeholder="you@company.com" class="flex-1 px-4 py-3 rounded bg-white/[0.06] border border-[#3f3f46] text-white placeholder-[#71717a] text-sm font-mono focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all">
+            <button type="submit" class="px-6 py-3 bg-brand-600 text-white font-semibold text-sm rounded hover:bg-brand-500 transition-all whitespace-nowrap cursor-pointer">
                 Join the Waitlist
             </button>
         </form>
@@ -639,23 +500,21 @@
 </section>
 
 
-<!-- ================================================================
-     FOOTER
-     ================================================================ -->
+<!-- FOOTER -->
 <footer class="py-8 bg-[#09090b] border-t border-[#27272a]">
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <a href="/" style="display:inline-block;">
             <svg viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg" height="28" style="display:block;">
-                <line x1="24" y1="1" x2="24" y2="8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <line x1="24" y1="40" x2="24" y2="47" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <line x1="1" y1="24" x2="8" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <line x1="40" y1="24" x2="47" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
-                <path d="M17 43.2A20 20 0 014.8 31" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
-                <rect x="13" y="27" width="5.5" height="9" fill="#f59e0b" opacity=".35"/>
-                <rect x="21.25" y="20" width="5.5" height="16" fill="#f59e0b" opacity=".6"/>
-                <rect x="29.5" y="13" width="5.5" height="23" fill="#f59e0b"/>
-                <text font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif" font-size="22" letter-spacing="-0.8" y="33" fill="#f5f4ef">
+                <line x1="24" y1="1" x2="24" y2="8" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="24" y1="40" x2="24" y2="47" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="1" y1="24" x2="8" y2="24" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="40" y1="24" x2="47" y2="24" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <path d="M17 43.2A20 20 0 014.8 31" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <rect x="13" y="27" width="5.5" height="9" fill="#14b8a6" opacity=".35"/>
+                <rect x="21.25" y="20" width="5.5" height="16" fill="#14b8a6" opacity=".6"/>
+                <rect x="29.5" y="13" width="5.5" height="23" fill="#14b8a6"/>
+                <text font-family="'IBM Plex Sans', -apple-system, 'Helvetica Neue', sans-serif" font-size="22" letter-spacing="-0.8" y="33" fill="#f5f4ef">
                     <tspan font-weight="300" x="58">Scope</tspan><tspan font-weight="700">Proof</tspan>
                 </text>
             </svg>
@@ -665,19 +524,9 @@
 </footer>
 
 
-<!-- ================================================================
-     SCRIPTS
-     ================================================================ -->
 <script>
-    // ── Nav scroll effect ─────────────────────────────────────
     const nav = document.getElementById('nav');
-    function updateNav() {
-        if (window.scrollY > 32) {
-            nav.classList.add('nav-blur');
-        } else {
-            nav.classList.remove('nav-blur');
-        }
-    }
+    function updateNav() { nav.classList.toggle('nav-blur', window.scrollY > 32); }
     window.addEventListener('scroll', updateNav, { passive: true });
     updateNav();
 

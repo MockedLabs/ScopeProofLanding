@@ -15,7 +15,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -24,13 +24,13 @@
             extend: {
                 colors: {
                     brand: {
-                        50:'#fffbeb', 100:'#fef3c7', 200:'#fde68a', 300:'#fcd34d',
-                        400:'#fbbf24', 500:'#f59e0b', 600:'#d97706', 700:'#b45309',
-                        800:'#92400e', 900:'#78350f', 950:'#451a03',
+                        50:'#f0fdfa', 100:'#ccfbf1', 200:'#99f6e4', 300:'#5eead4',
+                        400:'#2dd4bf', 500:'#14b8a6', 600:'#0d9488', 700:'#0f766e',
+                        800:'#115e59', 900:'#134e4a', 950:'#042f2e',
                     },
                 },
                 fontFamily: {
-                    sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    sans: ['IBM Plex Sans', 'system-ui', '-apple-system', 'sans-serif'],
                     mono: ['JetBrains Mono', 'monospace'],
                 },
             },
@@ -40,13 +40,13 @@
 
     <style>
         .bg-grid {
-            background-image: radial-gradient(circle, rgba(245,158,11,0.04) 1px, transparent 1px);
+            background-image: radial-gradient(circle, rgba(20,184,166,0.04) 1px, transparent 1px);
             background-size: 32px 32px;
         }
         .bg-mesh {
             background:
-                radial-gradient(ellipse 80% 50% at 25% 50%, rgba(245,158,11,0.08), transparent),
-                radial-gradient(ellipse 50% 80% at 80% 20%, rgba(217,119,6,0.05), transparent);
+                radial-gradient(ellipse 80% 50% at 25% 50%, rgba(20,184,166,0.08), transparent),
+                radial-gradient(ellipse 50% 80% at 80% 20%, rgba(13,148,136,0.05), transparent);
         }
         .nav-blur {
             background: rgba(12,12,14,0.8);
@@ -67,15 +67,15 @@
         <!-- Logo -->
         <a href="/">
             <svg viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg" height="32" style="display:block;">
-                <line x1="24" y1="1" x2="24" y2="8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <line x1="24" y1="40" x2="24" y2="47" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <line x1="1" y1="24" x2="8" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <line x1="40" y1="24" x2="47" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
-                <path d="M17 43.2A20 20 0 014.8 31" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
-                <rect x="13" y="27" width="5.5" height="9" fill="#f59e0b" opacity=".35"/>
-                <rect x="21.25" y="20" width="5.5" height="16" fill="#f59e0b" opacity=".6"/>
-                <rect x="29.5" y="13" width="5.5" height="23" fill="#f59e0b"/>
+                <line x1="24" y1="1" x2="24" y2="8" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="24" y1="40" x2="24" y2="47" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="1" y1="24" x2="8" y2="24" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="40" y1="24" x2="47" y2="24" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <path d="M17 43.2A20 20 0 014.8 31" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <rect x="13" y="27" width="5.5" height="9" fill="#14b8a6" opacity=".35"/>
+                <rect x="21.25" y="20" width="5.5" height="16" fill="#14b8a6" opacity=".6"/>
+                <rect x="29.5" y="13" width="5.5" height="23" fill="#14b8a6"/>
                 <text font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif" font-size="22" letter-spacing="-0.8" y="33" fill="#f5f4ef">
                     <tspan font-weight="300" x="58">Scope</tspan><tspan font-weight="700">Proof</tspan>
                 </text>
@@ -93,7 +93,7 @@
 
         <!-- CTA + Hamburger -->
         <div class="flex items-center gap-3">
-            <a href="#download" class="text-sm px-4 py-2 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold rounded hover:bg-[#f59e0b] transition-all">
+            <a href="#download" class="text-sm px-4 py-2 bg-brand-600 text-white font-mono font-semibold rounded hover:bg-brand-500 transition-all">
                 Download
             </a>
             <button id="menu-toggle" class="md:hidden p-2 text-[#a1a1aa] hover:text-white" aria-label="Toggle menu">
@@ -122,7 +122,7 @@
 
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-28 pb-20">
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 mb-10 rounded border border-amber-500/20 bg-amber-500/10 text-sm font-mono text-amber-400">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 mb-10 rounded border border-brand-500/20 bg-brand-500/10 text-sm font-mono text-brand-400">
             <span class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
@@ -130,9 +130,9 @@
             Free &amp; Open Source
         </div>
 
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-mono font-extrabold tracking-tight leading-[1.08] mb-6">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08] mb-6">
             <span class="text-white">Download</span><br>
-            <span class="bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 bg-clip-text text-transparent">ScopeProof</span>
+            <span class="bg-gradient-to-r from-brand-400 via-brand-300 to-brand-200 bg-clip-text text-transparent">ScopeProof</span>
         </h1>
 
         <p class="text-lg md:text-xl text-[#a1a1aa] max-w-2xl mx-auto mb-12 leading-relaxed">
@@ -142,7 +142,7 @@
 
         <!-- Download button -->
         <div id="download" class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://github.com/MockedLabs/ScopeProof/releases/download/v1.1.0/ScopeProof-1.1.0.jar" class="inline-flex items-center gap-3 px-8 py-4 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold text-base rounded hover:bg-[#f59e0b] transition-all">
+            <a href="https://github.com/MockedLabs/ScopeProof/releases/download/v1.1.0/ScopeProof-1.1.0.jar" class="inline-flex items-center gap-3 px-8 py-4 bg-brand-600 text-white font-mono font-semibold text-base rounded hover:bg-brand-500 transition-all">
                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
                     <polyline points="7 10 12 15 17 10"/>
@@ -160,7 +160,7 @@
 
         <p class="mt-6 text-sm text-[#a1a1aa]/60 font-mono">v1.1.0 &middot; Montoya API &middot; Java</p>
         <p class="mt-3 text-sm text-[#a1a1aa]/60">
-            <svg class="inline-block w-4 h-4 mr-1 -mt-0.5 align-middle text-amber-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <svg class="inline-block w-4 h-4 mr-1 -mt-0.5 align-middle text-brand-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             Pending BApp Store approval &mdash; manual install via .jar for now
         </p>
     </div>
@@ -170,11 +170,11 @@
 <!-- ================================================================
      INSTALLATION STEPS
      ================================================================ -->
-<section class="py-24 bg-[#111113]">
-    <div class="max-w-4xl mx-auto px-6">
+<section class="py-20 bg-[#111113]">
+    <div class="max-w-3xl mx-auto px-6">
         <div class="text-center mb-16">
-            <p class="text-sm font-mono font-semibold text-amber-500 tracking-wide uppercase mb-3">Setup</p>
-            <h2 class="text-3xl md:text-4xl font-mono font-bold tracking-tight text-white mb-4">
+            <p class="text-sm font-mono font-semibold text-brand-500 tracking-wide uppercase mb-3">Setup</p>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
                 Install in under a minute
             </h2>
             <p class="text-lg text-[#a1a1aa] max-w-xl mx-auto">
@@ -182,28 +182,29 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-12 md:gap-8 relative">
-            <!-- Connector line -->
-            <div class="hidden md:block absolute top-7 left-[20%] right-[20%] border-t-2 border-dashed border-[#27272a]"></div>
+        <!-- Timeline layout -->
+        <div class="relative pl-10 md:pl-14">
+            <!-- Vertical connector line -->
+            <div class="absolute left-[1.1rem] md:left-[1.6rem] top-2 bottom-2 w-px bg-brand-600/30"></div>
 
             <!-- Step 1 -->
-            <div class="text-center">
-                <div class="w-14 h-14 rounded-md bg-amber-600 text-white font-mono font-bold text-xl flex items-center justify-center mx-auto mb-6 relative z-10">
+            <div class="relative mb-10">
+                <div class="absolute -left-10 md:-left-14 w-8 h-8 md:w-10 md:h-10 rounded-full bg-brand-600 text-white font-mono font-bold text-sm md:text-base flex items-center justify-center z-10">
                     1
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2 text-lg">Download the JAR</h3>
+                <h3 class="font-bold text-white mb-1.5 text-lg">Download the JAR</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">
                     Download <strong class="text-white">ScopeProof.jar</strong> from the button above or from the
-                    <a href="https://github.com/MockedLabs/ScopeProof/releases/latest" class="text-amber-500 hover:text-amber-400 underline">GitHub releases page</a>.
+                    <a href="https://github.com/MockedLabs/ScopeProof/releases/latest" class="text-brand-500 hover:text-brand-400 underline">GitHub releases page</a>.
                 </p>
             </div>
 
             <!-- Step 2 -->
-            <div class="text-center">
-                <div class="w-14 h-14 rounded-md bg-amber-600 text-white font-mono font-bold text-xl flex items-center justify-center mx-auto mb-6 relative z-10">
+            <div class="relative mb-10">
+                <div class="absolute -left-10 md:-left-14 w-8 h-8 md:w-10 md:h-10 rounded-full bg-brand-600 text-white font-mono font-bold text-sm md:text-base flex items-center justify-center z-10">
                     2
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2 text-lg">Add to Burp Suite</h3>
+                <h3 class="font-bold text-white mb-1.5 text-lg">Add to Burp Suite</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">
                     In Burp Suite, go to <strong class="text-white">Extensions &gt; Installed &gt; Add</strong>.
                     Set the type to <strong class="text-white">Java</strong> and select the JAR file.
@@ -211,11 +212,11 @@
             </div>
 
             <!-- Step 3 -->
-            <div class="text-center">
-                <div class="w-14 h-14 rounded-md bg-amber-600 text-white font-mono font-bold text-xl flex items-center justify-center mx-auto mb-6 relative z-10">
+            <div class="relative">
+                <div class="absolute -left-10 md:-left-14 w-8 h-8 md:w-10 md:h-10 rounded-full bg-brand-600 text-white font-mono font-bold text-sm md:text-base flex items-center justify-center z-10">
                     3
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2 text-lg">Start Testing</h3>
+                <h3 class="font-bold text-white mb-1.5 text-lg">Start Testing</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">
                     A <strong class="text-white">ScopeProof</strong> tab appears automatically.
                     Test normally and coverage data populates in real time.
@@ -229,11 +230,11 @@
 <!-- ================================================================
      SCREENSHOT
      ================================================================ -->
-<section class="py-24 bg-[#0c0c0e]">
+<section class="py-28 bg-[#0c0c0e]">
     <div class="max-w-5xl mx-auto px-6">
         <div class="text-center mb-12">
-            <p class="text-sm font-mono font-semibold text-amber-500 tracking-wide uppercase mb-3">In Action</p>
-            <h2 class="text-3xl md:text-4xl font-mono font-bold tracking-tight text-white mb-4">
+            <p class="text-sm font-mono font-semibold text-brand-500 tracking-wide uppercase mb-3">In Action</p>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
                 See your coverage at a glance
             </h2>
         </div>
@@ -248,64 +249,72 @@
 <!-- ================================================================
      WHAT'S INCLUDED
      ================================================================ -->
-<section class="py-24 bg-[#111113]">
+<section class="py-20 bg-[#111113]">
     <div class="max-w-5xl mx-auto px-6">
         <div class="text-center mb-16">
-            <p class="text-sm font-mono font-semibold text-amber-500 tracking-wide uppercase mb-3">Features</p>
-            <h2 class="text-3xl md:text-4xl font-mono font-bold tracking-tight text-white mb-4">
+            <p class="text-sm font-mono font-semibold text-brand-500 tracking-wide uppercase mb-3">Features</p>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
                 Everything in the free extension
             </h2>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Highlight rows (2 features) -->
+        <div class="space-y-4 mb-6">
+            <div class="flex items-start gap-6 p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-brand-500/30 transition-all">
+                <div class="w-12 h-12 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center shrink-0">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="12" width="4" height="9" rx="1"/>
                         <rect x="10" y="7" width="4" height="14" rx="1"/>
                         <rect x="17" y="3" width="4" height="18" rx="1"/>
                     </svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Real-Time Coverage</h3>
-                <p class="text-sm text-[#a1a1aa] leading-relaxed">Captures traffic from Proxy, Repeater, Intruder, Scanner, and all other Burp tools automatically.</p>
+                <div>
+                    <h3 class="font-bold text-white mb-1.5">Real-Time Coverage</h3>
+                    <p class="text-sm text-[#a1a1aa] leading-relaxed">Captures traffic from Proxy, Repeater, Intruder, Scanner, and all other Burp tools automatically.</p>
+                </div>
             </div>
 
-            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="flex items-start gap-6 p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-brand-500/30 transition-all">
+                <div class="w-12 h-12 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center shrink-0">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M20.24 12.24a6 6 0 00-8.49-8.49L5 10.5V19h8.5z"/>
                         <line x1="16" y1="8" x2="2" y2="22"/>
                         <line x1="17.5" y1="15" x2="9" y2="15"/>
                     </svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Custom Payload Tagging</h3>
-                <p class="text-sm text-[#a1a1aa] leading-relaxed">Define your own payloads by category. Paste lists, load from files, or tag directly from requests. Zero false positives.</p>
+                <div>
+                    <h3 class="font-bold text-white mb-1.5">Custom Payload Tagging</h3>
+                    <p class="text-sm text-[#a1a1aa] leading-relaxed">Define your own payloads by category. Paste lists, load from files, or tag directly from requests. Zero false positives.</p>
+                </div>
             </div>
+        </div>
 
-            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
+        <!-- 2x2 grid (remaining 4 features) -->
+        <div class="grid sm:grid-cols-2 gap-4">
+            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-brand-500/30 transition-all">
+                <div class="w-10 h-10 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="16 18 22 12 16 6"/>
                         <polyline points="8 6 2 12 8 18"/>
                     </svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Intruder Integration</h3>
+                <h3 class="font-bold text-white mb-2">Intruder Integration</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">Tagged payloads appear as Intruder payload generators. Select by category or use all at once.</p>
             </div>
 
-            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
+            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-brand-500/30 transition-all">
+                <div class="w-10 h-10 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
                         <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
                     </svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Annotations</h3>
+                <h3 class="font-bold text-white mb-2">Annotations</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">Add notes and tags to any endpoint. Document findings as you go. Persists across Burp sessions.</p>
             </div>
 
-            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
+            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-brand-500/30 transition-all">
+                <div class="w-10 h-10 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
                         <polyline points="14 2 14 8 20 8"/>
@@ -313,17 +322,17 @@
                         <line x1="16" y1="17" x2="8" y2="17"/>
                     </svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">JSON &amp; CSV Export</h3>
+                <h3 class="font-bold text-white mb-2">JSON &amp; CSV Export</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">Export full endpoint data with testing depth, tool usage, and metadata for reports and analysis.</p>
             </div>
 
-            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-amber-500/30 transition-all">
-                <div class="w-10 h-10 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-4">
+            <div class="p-6 rounded-md border border-[#27272a] bg-[#18181b] hover:border-brand-500/30 transition-all">
+                <div class="w-10 h-10 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
                 </div>
-                <h3 class="font-mono font-semibold text-white mb-2">Persistent Storage</h3>
+                <h3 class="font-bold text-white mb-2">Persistent Storage</h3>
                 <p class="text-sm text-[#a1a1aa] leading-relaxed">Coverage data, payloads, and annotations survive Burp restarts. Pick up right where you left off.</p>
             </div>
         </div>
@@ -336,20 +345,20 @@
      ================================================================ -->
 <section class="py-16 bg-[#111113] border-t border-[#27272a]">
     <div class="max-w-3xl mx-auto px-6">
-        <h3 class="font-mono font-semibold text-white text-center mb-8 text-lg">Requirements</h3>
+        <h3 class="font-bold text-white text-center mb-8 text-lg">Requirements</h3>
         <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm text-[#a1a1aa]">
             <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                <svg class="w-4 h-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
                 Burp Suite Professional or Community
             </span>
             <span class="hidden sm:block w-1 h-1 rounded-full bg-[#3f3f46]"></span>
             <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                <svg class="w-4 h-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
                 Java 17+
             </span>
             <span class="hidden sm:block w-1 h-1 rounded-full bg-[#3f3f46]"></span>
             <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                <svg class="w-4 h-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
                 Montoya API
             </span>
         </div>
@@ -360,12 +369,12 @@
 <!-- ================================================================
      CTA — PRO SIGNUP
      ================================================================ -->
-<section id="waitlist" class="py-24 bg-[#0c0c0e] relative overflow-hidden">
+<section id="waitlist" class="py-28 bg-[#0c0c0e] relative overflow-hidden">
     <div class="absolute inset-0 bg-grid opacity-40"></div>
     <div class="absolute inset-0 bg-mesh"></div>
 
     <div class="relative z-10 max-w-2xl mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-mono font-bold tracking-tight text-white mb-4">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
             Want dashboards, client portals, and team analytics?
         </h2>
         <p class="text-lg text-[#a1a1aa] mb-10 leading-relaxed">
@@ -374,8 +383,8 @@
         </p>
 
         <form action="https://formspree.io/f/xaqlgzag" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-            <input type="email" name="email" required placeholder="you@company.com" class="flex-1 px-4 py-3 rounded bg-white/[0.06] border border-[#3f3f46] text-white placeholder-[#71717a] text-sm font-mono focus:border-[#d97706] focus:ring-2 focus:ring-[#d97706]/20 outline-none transition-all">
-            <button type="submit" class="px-6 py-3 bg-[#d97706] text-[#0c0c0e] font-mono font-semibold text-sm rounded hover:bg-[#f59e0b] transition-all whitespace-nowrap cursor-pointer">
+            <input type="email" name="email" required placeholder="you@company.com" class="flex-1 px-4 py-3 rounded bg-white/[0.06] border border-[#3f3f46] text-white placeholder-[#71717a] text-sm font-mono focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all">
+            <button type="submit" class="px-6 py-3 bg-brand-600 text-white font-mono font-semibold text-sm rounded hover:bg-brand-500 transition-all whitespace-nowrap cursor-pointer">
                 Join the Waitlist
             </button>
         </form>
@@ -392,15 +401,15 @@
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <a href="/" style="display:inline-block;">
             <svg viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg" height="28" style="display:block;">
-                <line x1="24" y1="1" x2="24" y2="8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <line x1="24" y1="40" x2="24" y2="47" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <line x1="1" y1="24" x2="8" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <line x1="40" y1="24" x2="47" y2="24" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
-                <path d="M17 43.2A20 20 0 014.8 31" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
-                <rect x="13" y="27" width="5.5" height="9" fill="#f59e0b" opacity=".35"/>
-                <rect x="21.25" y="20" width="5.5" height="16" fill="#f59e0b" opacity=".6"/>
-                <rect x="29.5" y="13" width="5.5" height="23" fill="#f59e0b"/>
+                <line x1="24" y1="1" x2="24" y2="8" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="24" y1="40" x2="24" y2="47" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="1" y1="24" x2="8" y2="24" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <line x1="40" y1="24" x2="47" y2="24" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M31 4.8A20 20 0 0143.2 17" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <path d="M17 43.2A20 20 0 014.8 31" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <rect x="13" y="27" width="5.5" height="9" fill="#14b8a6" opacity=".35"/>
+                <rect x="21.25" y="20" width="5.5" height="16" fill="#14b8a6" opacity=".6"/>
+                <rect x="29.5" y="13" width="5.5" height="23" fill="#14b8a6"/>
                 <text font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif" font-size="22" letter-spacing="-0.8" y="33" fill="#f5f4ef">
                     <tspan font-weight="300" x="58">Scope</tspan><tspan font-weight="700">Proof</tspan>
                 </text>
